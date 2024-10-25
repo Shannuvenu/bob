@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    font-family: arial;
+    border:border-box;
+
+}
+.navbar{
+    height: 60px;
+    background-color: black;
+    color:white;
+    align-items: center;
+}
+.nav-logo{
+    height:50px;
+    width:100px;
+}
+/**box1**/
+.logo{
+      background-image: url("sv logo.jpg");
+      background-size: cover;
+      height:50px;
+      width:100%;
+      display: flex;
+}
+.border{
+    border:2px solid transparent;
+}
+.border:hover{
+    border:2px white;
+}
+/**box2**/
+.nav-search{
+    display:flex;
+    align-items: center;
+}
+/**pannel**/
+.pannel-ops{
+    height:40px;
+    background-color: rgb(27, 7, 7);
+    display:flex;
+}
+.pannel-videos{
+    display:flex;
+}
