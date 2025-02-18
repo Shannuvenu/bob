@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char polynomial[10], frame[100], result[100];
+    int i, j, k, poly_len, frame_len, total_len;
+
+    printf("Enter polynomial: ");
+    scanf("%s", polynomial);
+
+    printf("Enter the frame: ");
+    scanf("%s", frame);
+
+    poly_len = strlen(polynomial);
+    frame_len = strlen(frame);
+
+    // Remove leading zeros from polynomial
+    for (i = 0; i < poly_len; i++) {
+        if (polynomial[i] == '1') {
+            break;
+        }
+    }
+    memmove(polynomial, polynomial + i, poly_len - i);
+    poly_len -= i;
+
+    // Initialize result with frame and append zeros
+    strcpy(result, frame);
+    for (i = frame_len; i < frame_len + poly_len - 1; i++) {
+        result[i] = '0';
+    }
+    result[i] = '\0';
+
+    // Perform division
+    for (i = 0; i <= frame_len - 1; i++) {
+        if (result[i] == '1') {
+            for (j = 0; j < poly_len; j++) {
+                result[i + j] = (result[i + j] == polynomial[j]) ? '0' : '1';
+            }
+        }
+    }
+
+    // Copy original frame back to result
+    strncpy(result, frame, frame_len);
+    result[frame_len + poly_len - 1] = '\0';
+
+    printf("The message is: %s\n", result);
+    return 0;
+}
