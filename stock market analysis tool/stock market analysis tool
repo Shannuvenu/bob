@@ -1,0 +1,10 @@
+#stock market tool 
+spip install yfinance #we need to install it
+import yfinance as yf  
+stock = "FCSSOFT.NS" #stock name must be in Ticker format
+data = yf.download(stock, start="2024-01-01", end="2025-01-01")
+print(data.head())
+stock_info = yf.Ticker("FCSSOFT.NS")
+current_price = stock_info.history(period="1d")["Close"][-1] #to find the current price 
+print(f"Current price of fcs: ₹{current_price}")
+data.to_csv("fcs_stock_data.csv")
