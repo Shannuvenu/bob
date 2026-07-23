@@ -98,6 +98,47 @@
         font-size: 28px;
         color: orange;
     }
+    <script>
+    // Welcome message
+    alert("Welcome to Mahesh Babu Fan Page!");
+
+    // Change heading color when clicked
+    const heading = document.querySelector("h2");
+
+    heading.addEventListener("click", function () {
+        heading.style.color = "cyan";
+        heading.innerHTML = "🔥 JAI BABU 🔥";
+    });
+
+    // Image animation
+    const image = document.querySelector("img");
+
+    image.addEventListener("mouseover", function () {
+        image.style.transform = "scale(1.15)";
+        image.style.transition = "0.4s";
+    });
+
+    image.addEventListener("mouseout", function () {
+        image.style.transform = "scale(1)";
+    });
+
+    // Button click message
+    const link = document.querySelector("a");
+
+    link.addEventListener("click", function () {
+        alert("Enjoy the Mahesh Babu Song! 🎵");
+    });
+
+    // Double-click anywhere to change background
+    document.body.addEventListener("dblclick", function () {
+        document.body.style.background =
+            "linear-gradient(to right, purple, black)";
+    });
+
+    // Display current year
+    const year = new Date().getFullYear();
+    console.log("Current Year:", year);
+</script>
 </style>    
 <body>
 </body>
